@@ -1,4 +1,4 @@
-baseURL = "eduardoce.netlify.app/"
+baseURL = "https://eduardoce.netlify.app/"
 languageCode = "en-us"
 title = "Eduardo Espadeiro"
 theme = "personal-web"
