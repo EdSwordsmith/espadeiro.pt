@@ -7,6 +7,4 @@ Hey,
 
 I'm Eduardo Espadeiro, a Developer and Student.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus error cumque quisquam necessitatibus libero dolore porro, quo at molestiae modi voluptatibus iusto alias corporis. Accusamus, debitis, atque. Maiores, distinctio, neque.
-
-[Get to know me better](/about "Get to know me better")
+I love programming and I'm currently studying Engenharia Informártica e de Computadores at Instituto Superior Técnico in Lisbon. I enjoy doing game development and my favourite animal is the owl.
