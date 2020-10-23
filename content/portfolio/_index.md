@@ -1,6 +1,6 @@
 ---
-title: PORTFOLIO
+title: Portfolio
 description: 'Portfolio Section'
 ---
 
-You'll add here a general introduction of your portfolio page.
+Here are the projects I have done!

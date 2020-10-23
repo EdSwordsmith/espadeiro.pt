@@ -1,4 +1,4 @@
-baseURL = "http://web.tecnico.ulisboa.pt/eduardo.espadeiro/"
+baseURL = "http://web.tecnico.ulisboa.pt/"
 languageCode = "en-us"
 title = "Eduardo Espadeiro"
 theme = "personal-web"
