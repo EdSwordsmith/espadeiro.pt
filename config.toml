@@ -59,12 +59,12 @@ pygmentsCodeFences=true
 
 [menu]
 
-[[menu.main]]
-  identifier = "about"
-  name = "About"
-  title = "About section"
-  url = "/about/"
-  weight = -120
+#[[menu.main]]
+#  identifier = "about"
+#  name = "About"
+#  title = "About section"
+#  url = "/about/"
+#  weight = -120
 
 [[menu.main]]
   identifier = "portfolio"
