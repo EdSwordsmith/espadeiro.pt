@@ -1,4 +1,4 @@
-baseURL = "http://web.tecnico.ulisboa.pt/"
+baseURL = "eduardoce.netlify.app/"
 languageCode = "en-us"
 title = "Eduardo Espadeiro"
 theme = "personal-web"
