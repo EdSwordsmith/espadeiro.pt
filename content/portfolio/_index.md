@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-description: 'Portfolio Section'
+description: 'My Projects'
 ---
 
-Here are the projects I have made!
+Here are the projects I have made! To look for projects by technology used click [here](/techs).
