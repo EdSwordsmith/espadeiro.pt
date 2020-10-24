@@ -7,7 +7,7 @@ work: ["game development"]
 techs: [defold, lua]
 designs: []
 thumbnail: 100stepdungeon/screenshot.png
-images: [100stepdungeon/screenshot.png]
+images: [/portfolio/100stepdungeon/screenshot.png]
 projectUrl: https://edswordsmith.itch.io/100stepdungeon
 ---
 
