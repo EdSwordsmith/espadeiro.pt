@@ -24,6 +24,8 @@ pygmentsCodeFences=true
   hrefTargetBlank = true
 
 [params]
+  author = "Eduardo Espadeiro"
+  description = "Hi, I'm Eduardo and I'm a Developer and Student"
   breadcrumb = true
   accentColor = "#FD3519"
   mainSections = ['portfolio'] # values: ['post', 'portfolio'] only accept one section, to be displayed bellow 404
