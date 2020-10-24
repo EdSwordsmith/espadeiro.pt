@@ -24,6 +24,7 @@ pygmentsCodeFences=true
   hrefTargetBlank = true
 
 [params]
+  title = "Eduardo Espadeiro"
   author = "Eduardo Espadeiro"
   description = "Hi, I'm Eduardo and I'm a Developer and Student"
   breadcrumb = true
