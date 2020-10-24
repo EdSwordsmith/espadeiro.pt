@@ -7,7 +7,7 @@ work: ["game development"]
 techs: [defold, lua]
 designs: []
 thumbnail: bridgeman/screenshot.png
-images: [bridgeman/screenshot.png]
+images: [/portfolio/bridgeman/screenshot.png]
 projectUrl: https://edswordsmith.itch.io/bridgeman
 ---
 
