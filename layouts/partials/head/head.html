@@ -3,6 +3,6 @@
   <link rel='canonical' href='{{ .Permalink }}' />
   {{ partial "head/meta" .}}
   {{ partial "head/style" .}}
-  {{ partial "overrides/opengraph.html" . }}
-  {{ partial "overrides/schema.html" . }}
+  {{ template "overrides/opengraph.html" . }}
+  {{ template "overrides/schema.html" . }}
 </head>
