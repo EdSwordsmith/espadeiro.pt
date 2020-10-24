@@ -7,6 +7,7 @@ work: ["game development"]
 techs: [javascript, p5.js]
 designs: []
 thumbnail: guessthenumber/screenshot.png
+images: [guessthenumber/screenshot.png]
 projectUrl: https://edswordsmith.github.io/GuessTheNumber/
 ---
 
