@@ -30,7 +30,7 @@ pygmentsCodeFences=true
   breadcrumb = true
   accentColor = "#FD3519"
   mainSections = ['portfolio'] # values: ['post', 'portfolio'] only accept one section, to be displayed bellow 404
-  images = ["/images/eduardo.jpg"]
+  images = ["/images/eduardo_.jpg"]
 
 [params.notFound]
   gopher = "/images/gopher.png" # checkout https://gopherize.me/
@@ -46,7 +46,7 @@ pygmentsCodeFences=true
 [params.sidebar]
   backgroundImage = '/images/background.jpg' # header background image - default "/images/default_sidebar.jpg" - Photo by Tim Marshall on Unsplash
   gradientOverlay = '' # default: rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-  logo = "/images/eduardo.jpg" # - default "/images/edna-west.jpg"
+  logo = "/images/eduardo_.jpg" # - default "/images/edna-west.jpg"
 
 [params.assets]
   favicon = ""
