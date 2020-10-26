@@ -1,6 +1,7 @@
 <head>
   <title>{{.Params.title}} - {{ $.Site.Title}}</title>
   <link rel='canonical' href='{{ .Permalink }}' />
+  <meta name="description" content="{{ .Site.Params.description }}" />
   {{ partial "head/meta" .}}
   {{ partial "head/style" .}}
   {{ template "overrides/opengraph.html" . }}
