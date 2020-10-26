@@ -1,6 +1,7 @@
 ---
 title: "Home"
 date: 2020-10-23T12:05:32+01:00
+description: Hi, I'm Eduardo and I'm a Developer and Student!
 ---
 
 Hey,
