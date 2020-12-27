@@ -1,4 +1,4 @@
 ---
 title: Blog
-description: 'Posts Section'
+description: 'My Personal Blog'
 ---

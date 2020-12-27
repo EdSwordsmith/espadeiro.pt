@@ -3,6 +3,7 @@ title: Coding a Snake Clone
 description: Coding a Snake Clone in C and in C++
 date: "2020-12-27T11:50:26Z"
 publishDate: "2020-12-27T11:50:26Z"
+images: ["/post/images/snake.png"]
 ---
 
 {{< figure src="/post/images/snake.png" >}}
