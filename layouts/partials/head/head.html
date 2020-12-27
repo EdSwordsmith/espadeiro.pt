@@ -3,6 +3,7 @@
   <link rel='canonical' href='{{ .Permalink }}' />
   {{ partial "head/meta" .}}
   {{ partial "head/style" .}}
+  <style>.chroma {overflow-x: scroll;}</style>
   {{ template "overrides/opengraph.html" . }}
   {{ template "overrides/schema.html" . }}
   {{ template "overrides/twitter_cards.html" . }}
