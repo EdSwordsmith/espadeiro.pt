@@ -70,7 +70,7 @@ void DrawSnake(const Snake *snake);
 void ResetFoodPosition();
 ```
 
-For the C Style C++, I removed the `SnakeNode` struct and the `PushSnakeNode`, `PopSnakeNode` functions as I used an `std::list` for keeping a linked list of positions and `CreateSnake` was replaced by the constructor of the `Snake`struct.
+For the C Style C++, I removed the `SnakeNode` struct and the `PushSnakeNode`, `PopSnakeNode` functions as I used an `std::list` for keeping a linked list of positions and `CreateSnake` was replaced by the constructor of `Snake`.
 
 ### Snake in C++
 
@@ -89,4 +89,4 @@ public:
 void ResetFoodPosition();
 ```
 
-For the last version, I changed the struct to a class, making the member variables private, and moved both the update and draw functions inside the class.
+For the last version, I changed the struct to a class, making the member variables private, and moved both the update and draw functions to be inside the class.
