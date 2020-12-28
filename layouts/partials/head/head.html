@@ -1,5 +1,9 @@
 <head>
-  <title>{{.Params.title}} - {{ $.Site.Title}}</title>
+  {{ if .Params.title }}
+    <title>{{.Params.title}} - {{ $.Site.Title}}</title>
+  {{ else }}
+    <title>{{ $.Site.Title}}</title>
+  {{ end }}
   <link rel='canonical' href='{{ .Permalink }}' />
   {{ partial "head/meta" .}}
   {{ partial "head/style" .}}
