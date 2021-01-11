@@ -8,7 +8,7 @@ techs: [defold, lua]
 designs: []
 thumbnail: 100stepdungeon/screenshot.png
 images: [/portfolio/100stepdungeon/screenshot.png]
-projectUrl: https://edswordsmith.itch.io/100stepdungeon
+projectUrl: https://edswordsmith.itch.io/100-step-dungeon
 ---
 
 100 Step Dungeon is a simple game where you are inside a dungeon and can only do 100 actions. What is an action? An action can be move the player a tile or interact with an object. If an enemy attacks you, you will lose some actions. If you run out of them you return to the main screen.
