@@ -91,4 +91,4 @@ public:
 void ResetFoodPosition();
 ```
 
-For the last version, I changed the struct to a class, making the member variables private, and moved both the update and draw functions to be inside the class.
+For the last version, I changed the struct to a class, making the member variables private, and moved both the update and draw functions to inside the class.
