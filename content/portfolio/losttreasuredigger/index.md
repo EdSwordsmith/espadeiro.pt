@@ -19,5 +19,5 @@ Credits:
 * Eduardo Espadeiro
 * Guilherme Salvador
 
-A game made for Global Game Jam 2020 made in 48 hours.
+A game made for Global Game Jam 2021 made in 48 hours.
 [Global Game Jam Page for the game](https://globalgamejam.org/2021/games/lost-treasures-5)
