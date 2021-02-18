@@ -1,6 +1,0 @@
-[submodule "themes/somrat"]
-	path = themes/somrat
-	url = https://github.com/somratpro/somrat.git
-[submodule "themes/personal-web"]
-	path = themes/personal-web
-	url = https://github.com/bjacquemet/personal-web.git
