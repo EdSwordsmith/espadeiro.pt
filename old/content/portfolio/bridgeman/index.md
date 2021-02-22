@@ -15,10 +15,10 @@ A simple platformer where you, my man, have to repair them bridges. Collect the 
 
 Credits:
 
-* Eduardo Espadeiro
-* Gonçalo Guedelha
-* Miguel Alexandre Costa
-* José Maria Luís
+-   Eduardo Espadeiro
+-   Gonçalo Guedelha
+-   Miguel Alexandre Costa
+-   José Maria Luís
 
 A game made for Global Game Jam 2020 made in 48 hours.
 [Global Game Jam Page for the game](https://globalgamejam.org/2020/games/bridgeman-0)
