@@ -1,16 +1,20 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: gatsby
 
-media_folder: static/assets
-public_folder: /assets
+publish_mode: editorial_workflow
+
+media_folder: static/images
+public_folder: /images
 
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: src/posts
     create: true
+    identifier_field: title
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: date, label: Date, widget: datetime }
+      - { label: "Featured Image", name: "image", widget: "image" }
       - { name: body, label: Body, widget: markdown }

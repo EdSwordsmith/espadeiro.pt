@@ -1,16 +1,14 @@
 ---
 title: Coding a Snake Clone
 description: Coding a Snake Clone in C and in C++
-date: "2020-12-27T11:50:26Z"
-publishDate: "2020-12-27T11:50:26Z"
-images: ["/post/images/snake.png"]
+date: 2020-12-27T11:50:26Z
+image: /images/snake.png
 ---
-
-{{< figure src="/post/images/snake.png" >}}
 
 Recently I decided to look at coding games in C with raylib, made a few experiments and then I decided to code a snake clone from scratch. I knew that a snake could work as queue of positions. Moving a snake would be simply pushing a new position to the list and removing its tail. In order to make the snake grow all I had to do was not removing its tail if the snake encountered food.
 
 After coding my snake clone in C, I decided to compare different ways of coding games and ended up with three versions of my snake clone:
+
 <ul>
     <li>Snake written in C</li>
     <li>Snake written in C Style C++ (C++ without using classes)</li>
@@ -45,16 +43,17 @@ void ResetFoodPosition();
 For the C version, I used two structs, `Snake` and `SnakeNode`. `SnakeNode` is used for the linked list nodes and `Snake` contains the linked list and other variables related to the Snake (direction if it's dead or not).
 
 And I wrote these functions:
-- `CreateSnake` - For creating the snake.
-- `PushSnakeNode` - For pushing a new node to the linked list.
-- `PopSnakeNode` - For removing the tail of the linked list.
-- `UpdateSnake` - Contains the logic for the snake's behavior.
-- `DrawSnake` - Draws the snake to the screen.
-- `ResetFoodPosition` - Sets the position of the food to a random position.
+
+-   `CreateSnake` - For creating the snake.
+-   `PushSnakeNode` - For pushing a new node to the linked list.
+-   `PopSnakeNode` - For removing the tail of the linked list.
+-   `UpdateSnake` - Contains the logic for the snake's behavior.
+-   `DrawSnake` - Draws the snake to the screen.
+-   `ResetFoodPosition` - Sets the position of the food to a random position.
 
 ### Snake in C Style C++
 
-```c++
+```cpp
 struct Snake {
     std::list<Vector2> positions;
     Vector2 dir;
@@ -76,7 +75,7 @@ For the C Style C++, I removed the `SnakeNode` struct and the `PushSnakeNode`, `
 
 ### Snake in C++
 
-```c++
+```cpp
 class Snake {
     std::list<Vector2> positions;
     Vector2 dir;

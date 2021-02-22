@@ -1,6 +1,6 @@
 ---
 title: Techs
-description: 'Search projects by the technology used'
+description: "Search projects by the technology used"
 ---
 
 # Technologies
