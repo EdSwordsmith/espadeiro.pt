@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: Blog
+    folder: src/posts
+    create: true
+    identifier_field: title
+    fields:
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: datetime }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { name: body, label: Body, widget: markdown }
