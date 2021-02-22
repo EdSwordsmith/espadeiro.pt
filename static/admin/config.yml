@@ -13,6 +13,8 @@ collections:
     folder: src/posts
     create: true
     identifier_field: title
+    editor:
+      preview: false
     fields:
       - { name: title, label: Title }
       - { name: date, label: Date, widget: datetime }
