@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: "Eduardo Espadeiro",
+        siteUrl: "https://eduespadeiro.com"
     },
     plugins: [
         "website-layout",
