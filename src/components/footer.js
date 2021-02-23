@@ -9,7 +9,7 @@ const Footer = () => {
             style={{ height: "100%", width: "100%" }}
         >
             <Typography color="textSecondary" align="center">
-                Powered by Gastby.js and Material UI. © Eduardo Espadeiro
+                Powered by Gastby.js, Material UI and Font Awesome © Eduardo Espadeiro
             </Typography>
         </Box>
     )

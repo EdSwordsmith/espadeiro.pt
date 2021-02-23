@@ -1,8 +1,10 @@
 import React from "react"
-import { Box, IconButton, Typography } from "@material-ui/core"
+import { Box, Icon, IconButton, SvgIcon, Typography } from "@material-ui/core"
 
 import useStyles from "../components/styles"
 import { GitHub, LinkedIn, Twitter } from "@material-ui/icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faItchIo } from "@fortawesome/free-brands-svg-icons"
 
 const IndexPage = () => {
     const classes = useStyles()
@@ -21,6 +23,9 @@ const IndexPage = () => {
                     </IconButton>
                     <IconButton href="https://www.linkedin.com/in/eduardo-espadeiro/" target="_blank">
                         <LinkedIn style={{ fontSize: 50, color: "white" }} />
+                    </IconButton>
+                    <IconButton href="https://edswordsmith.itch.io/" target="_blank">
+                        <FontAwesomeIcon icon={faItchIo} style={{ fontSize: 50, color: "white" }} />
                     </IconButton>
                 </Typography>
             </div>
