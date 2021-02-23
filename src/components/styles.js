@@ -9,8 +9,8 @@ const useStyles = makeStyles(theme => ({
     },
     container: {
         margin: "100px auto",
-        width: "90%",
-        maxWidth: 900,
+        width: "95%",
+        maxWidth: 950,
     },
     title: {
         fontSize: "4rem",
