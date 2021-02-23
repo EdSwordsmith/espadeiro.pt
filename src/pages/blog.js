@@ -6,11 +6,9 @@ import useStyles from "../components/styles"
 import Link from "../components/link"
 
 const PostItem = props => {
-    const classes = useStyles()
-
     return (
-        <Box marginBottom={4} marginRight={4}>
-            <Card className={classes.cardRoot}>
+        <Box marginBottom={4}>
+            <Card>
                 <CardActionArea>
                     <Link to={`/blog/${props.slug}`}>
                         <CardHeader 
@@ -21,7 +19,7 @@ const PostItem = props => {
                         <CardMedia
                             component="img"
                             alt={props.title}
-                            height="250"
+                            height="400"
                             image={props.image}
                             title={props.title}
                         />
@@ -62,12 +60,10 @@ const BlogPage = () => {
     return (
         <div className={classes.container}>
             <Typography variant="h2" style={{marginBottom: 20}}>Blog</Typography>
-            <Box display="flex" flexWrap="wrap">
-                {data.allMarkdownRemark.edges.map(edge => {
-                    const node = edge.node
-                    return <PostItem slug={node.fields.slug} excerpt={node.excerpt} {...node.frontmatter}/>
-                })}
-            </Box>
+            {data.allMarkdownRemark.edges.map(edge => {
+                const node = edge.node
+                return <PostItem key={node.fields.slug} slug={node.fields.slug} excerpt={node.excerpt} {...node.frontmatter}/>
+            })}
         </div>
     )
 }
