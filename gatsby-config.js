@@ -35,6 +35,7 @@ module.exports = {
                 ],
             },
         },
+        "gatsby-transformer-yaml",
         "gatsby-plugin-fontawesome-css",
     ],
 }

@@ -9,8 +9,8 @@ const useStyles = makeStyles(theme => ({
     },
     container: {
         margin: "100px auto",
-        width: "95%",
-        maxWidth: 950,
+        width: "90%",
+        maxWidth: 900,
     },
     title: {
         fontSize: "4rem",
@@ -34,10 +34,6 @@ const useStyles = makeStyles(theme => ({
     },
     toolbarLink: {
         marginLeft: 20,
-    },
-    cardRoot: {
-        maxWidth: 400,
-        background: "#eee",
     },
 }))
 

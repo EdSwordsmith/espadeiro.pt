@@ -24,7 +24,7 @@ const Navbar = () => {
                     <Link to="/blog" color="textSecondary" className={classes.toolbarLink}>
                         <Typography variant="h6">Blog</Typography>
                     </Link>
-                    <Link to="/blog" color="textSecondary" className={classes.toolbarLink}>
+                    <Link to="/projects" color="textSecondary" className={classes.toolbarLink}>
                         <Typography variant="h6">Projects</Typography>
                     </Link>
                 </Toolbar>
