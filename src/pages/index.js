@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Icon, IconButton, SvgIcon, Typography } from "@material-ui/core"
+import { Box, IconButton, Typography } from "@material-ui/core"
 
 import useStyles from "../components/styles"
 import { GitHub, LinkedIn, Twitter } from "@material-ui/icons"
