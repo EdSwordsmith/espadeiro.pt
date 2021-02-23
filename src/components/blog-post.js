@@ -21,7 +21,7 @@ const Post = props => {
     return (
         <React.Fragment>
             <Typography variant="h2">{props.title}</Typography>
-            <img src={props.image} width="100%" />
+            <img src={props.image} alt={props.title} width="100%" />
             <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
         </React.Fragment>
     )

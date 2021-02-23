@@ -35,10 +35,6 @@ const useStyles = makeStyles(theme => ({
     toolbarLink: {
         marginLeft: 20,
     },
-    cardRoot: {
-        maxWidth: 400,
-        background: "#eee",
-    },
 }))
 
 export default useStyles

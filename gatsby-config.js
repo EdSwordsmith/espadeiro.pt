@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: "Eduardo Espadeiro",
-        siteUrl: "https://eduespadeiro.com"
+        siteUrl: "https://eduespadeiro.com",
     },
     plugins: [
         "website-layout",
@@ -35,5 +35,7 @@ module.exports = {
                 ],
             },
         },
+        "gatsby-transformer-yaml",
+        "gatsby-plugin-fontawesome-css",
     ],
 }
