@@ -1,7 +1,0 @@
-title: Guess the Number
-description: A game made where you guess a random number
-date: 2018-06-15T18:00:00+01:00
-techs: [javascript, p5.js]
-image: /images/guessthenumber.png
-projectUrl: https://edswordsmith.github.io/GuessTheNumber/
-code: https://github.com/EdSwordsmith/GuessTheNumber
