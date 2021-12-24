@@ -23,9 +23,10 @@ title_separator: "|"
 name: Eduardo Espadeiro
 email: eduardo.espadeiro@tecnico.ulisboa.pt
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Hey, I’m Eduardo Espadeiro, a Developer and Student.
+  I love programming and I’m currently studying
+  Computer Science and Engineering at Instituto
+  Superior Técnico in Lisbon.
 
 baseurl: ""
 url: "https://eduespadeiro.com"
