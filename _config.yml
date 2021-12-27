@@ -39,7 +39,7 @@ plugins:
 author:
   name: "Eduardo Espadeiro"
   avatar: "/assets/images/eduardo.png"
-  bio: "Computer Science and Engineering Student"
+  bio: Hi, I’m Eduardo! I’m studying Computer Science and Engineering @ Instituto Superior Técnico in Lisbon.
   location: "Évora, Portugal"
   links:
     - label: "GitHub"
