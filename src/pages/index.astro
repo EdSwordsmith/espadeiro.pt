@@ -1,13 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const description = "Hey, I'm Eduardo, a Developer and Student. I love programming and I'm currently studying Computer Science and Engineering at Instituto Superior Técnico in Lisbon.";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1 class="font-bold text-4xl">Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-	</main>
+<Layout description={description}>
+    <div class="container">
+        <figure class="image is-128x128">
+            <img class="is-rounded" src="https://media-exp1.licdn.com/dms/image/C4E03AQHdo_prHFnf3A/profile-displayphoto-shrink_800_800/0/1650538057207?e=1663200000&v=beta&t=fhoaCJgXpEK95IQ-0lr18jo7QcQEXWZ79MKtuvJzWAo">
+        </figure>
+        
+        <p class="title is-1">
+            Hi, I'm Eduardo!
+        </p>
+        <p class="subtitle">
+            I'm studying Computer Science and Engineering @ Instituto Superior Técnico in Lisbon.
+        </p>
+    </div>
 </Layout>
