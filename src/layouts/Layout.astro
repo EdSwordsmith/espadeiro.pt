@@ -1,20 +1,61 @@
 ---
+import "../styles/styles.scss";
+import Navbar from "../components/Navbar.svelte";
+
 export interface Props {
-	title: string;
+    title?: string;
+    description: string;
 }
 
-const { title } = Astro.props as Props;
+const props = Astro.props as Props;
+const title = props.title ? `${props.title} | Eduardo Espadeiro` : "Eduardo Espadeiro";
+const description = props.description;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://eduespadeiro.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@EdSwordsmith">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <section class="hero is-fullheight is-black">
+        <div class="hero-head">
+            <Navbar client:load />
+        </div>
+
+        <div class="hero-body">
+            <slot />
+        </div>
+
+        <div class="hero-foot">
+            <footer class="footer has-text-white has-background-black">
+                <div class="content has-text-centered">
+                    <p>
+                        © 2022 Eduardo Espadeiro. Powered by <a href="https://astro.build/">Astro</a> & <a href="https://bulma.io/">Bulma</a>.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </section>
+</body>
 </html>
