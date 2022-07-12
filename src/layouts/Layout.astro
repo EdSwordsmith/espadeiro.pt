@@ -1,10 +1,11 @@
 ---
 import "../styles/styles.scss";
 import Navbar from "../components/Navbar.svelte";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
     title?: string;
-    description: string;
+    description?: string;
 }
 
 const props = Astro.props as Props;
@@ -38,24 +39,8 @@ const description = props.description;
 </head>
 
 <body>
-    <section class="hero is-fullheight is-black">
-        <div class="hero-head">
-            <Navbar client:load />
-        </div>
-
-        <div class="hero-body">
-            <slot />
-        </div>
-
-        <div class="hero-foot">
-            <footer class="footer has-text-white has-background-black">
-                <div class="content has-text-centered">
-                    <p>
-                        © 2022 Eduardo Espadeiro. Powered by <a href="https://astro.build/">Astro</a> & <a href="https://bulma.io/">Bulma</a>.
-                    </p>
-                </div>
-            </footer>
-        </div>
-    </section>
+    <Navbar client:load />
+    <slot />
+    <Footer />
 </body>
 </html>
