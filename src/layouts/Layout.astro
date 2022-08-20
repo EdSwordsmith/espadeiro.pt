@@ -21,7 +21,7 @@ const props = Astro.props as Props;
 const title = props.title ? `${props.title} | Eduardo Espadeiro` : "Eduardo Espadeiro";
 const seoTitle = props.title || "Eduardo Espadeiro";
 const description = props.description || "";
-const image = imageUrl(props.image || "edu.jpg");
+const image = imageUrl(props.image || "/edu.jpg");
 ---
 
 <!DOCTYPE html>
