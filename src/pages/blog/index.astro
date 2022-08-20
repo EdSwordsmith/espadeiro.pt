@@ -47,15 +47,24 @@ const posts: Post[] = await getPosts();
                 <p class="title">Blog</p>
                 {
                     posts.map((post) => (
-                        <div class="mb-4">
-                            <a href={post.url}>
+                        <a href={post.url}>
+                            <div class="mb-4">
                                 <p class="title is-4">
                                     {post.frontmatter.title}
                                 </p>
-                            </a>
-                            <p>{post.frontmatter.date.toLocaleDateString()}</p>
-                            <p>{post.frontmatter.description}</p>
-                        </div>
+                                <p class="subtitle is-6 mb-0">
+                                    {post.frontmatter.date.toLocaleDateString(
+                                        "en-US",
+                                        {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "numeric",
+                                        }
+                                    )}
+                                </p>
+                                <p>{post.frontmatter.description}</p>
+                            </div>
+                        </a>
                     ))
                 }
             </div>
