@@ -8,11 +8,11 @@
     const links = [
       {
         name: "About",
-        href: "/about/",
+        href: "/",
       },
       {
         name: "Projects",
-        href: "/projects/",
+        href: "/",
       },
       {
         name: "Blog",
