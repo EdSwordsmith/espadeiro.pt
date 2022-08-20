@@ -18,3 +18,13 @@ body {
 code {
     background-color: transparent;
 }
+
+.content {
+    a {
+        color: $orange !important;
+    }
+
+    a:hover {
+        color: $grey-dark !important;
+    }
+}

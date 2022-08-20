@@ -28,7 +28,7 @@ What needs to be implemented:
 ## Researching
 Knowing this, I began my research, looking at a few implementations and concepts that could be of interest. The following were the articles I found that helped me the most.
 
-[https://austinmorlan.com/posts/entity_component_system/](https://austinmorlan.com/posts/entity_component_system/)
+[Austin Morlan's ECS](https://austinmorlan.com/posts/entity_component_system/)
 
 This first one showed me the basic structure that I will need, I didn't exactly like the approach for some things, such as using `typeid()`.
 
