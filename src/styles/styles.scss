@@ -1,10 +1,13 @@
 @charset "utf-8";
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+//@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+
 
 $dark: $black-bis;
 $text: $white-ter;
 $text-strong: $white-ter;
 $background: $dark;
+$scheme-main: $background;
 
 @import "../node_modules/bulma/bulma.sass";
 
