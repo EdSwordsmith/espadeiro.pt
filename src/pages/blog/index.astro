@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-interface Post {
+interface RawPost {
     frontmatter: {
         title: string;
         date: string;
@@ -11,7 +11,33 @@ interface Post {
     url: string;
 }
 
-const posts: Post[] = await Astro.glob('../blog/*.md');
+interface Post {
+    frontmatter: {
+        title: string;
+        date: Date;
+        description?: string;
+        image?: string;
+    };
+    url: string;
+}
+
+const getPosts = async (): Promise<Post[]> => {
+    const rawPosts: RawPost[] = await Astro.glob("../blog/*.md");
+    return rawPosts
+        .map((rawPost) => ({
+            ...rawPost,
+            frontmatter: {
+                ...rawPost.frontmatter,
+                date: new Date(rawPost.frontmatter.date),
+            },
+        }))
+        .sort(
+            (a, b) =>
+                b.frontmatter.date.getTime() - a.frontmatter.date.getTime()
+        );
+};
+
+const posts: Post[] = await getPosts();
 ---
 
 <Layout title="Blog" description="My Blog" image="/edu.jpg">
@@ -19,14 +45,19 @@ const posts: Post[] = await Astro.glob('../blog/*.md');
         <div class="hero-body">
             <div class="container">
                 <p class="title">Blog</p>
-                {posts.map(post => (
-                    <div class="mb-4">
-                        <a href={post.url}>
-                            <p class="title is-4 mb-1">{post.frontmatter.title}</p>
-                        </a>
-                        <p>{post.frontmatter.description}</p>
-                    </div>
-                ))}
+                {
+                    posts.map((post) => (
+                        <div class="mb-4">
+                            <a href={post.url}>
+                                <p class="title is-4">
+                                    {post.frontmatter.title}
+                                </p>
+                            </a>
+                            <p>{post.frontmatter.date.toLocaleDateString()}</p>
+                            <p>{post.frontmatter.description}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     </div>
