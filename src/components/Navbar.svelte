@@ -21,7 +21,7 @@
     ];
 </script>
 
-<nav class="navbar is-black">
+<nav class="navbar is-dark">
   <div class="navbar-brand">
     <a class="navbar-item has-text-weight-bold" href="/"> Eduardo Espadeiro </a>
 

@@ -12,17 +12,17 @@ const { frontmatter: { title, image } } = Astro.props as Props;
 ---
 
 <Layout>
-    <div class="hero is-fullheight is-dark">
+    <div class="hero is-dark">
         <div class="hero-head">
             {image && <figure class="image"><img src={image} alt={title}></figure>}
-
-            
         </div>
+
         <div class="hero-body">
             <div class="container content is-max-desktop">
-                <h1 class="title">
+                <p class="title is-2">
                     {title}
-                </h1>
+                </p>
+
                 <slot />
             </div>
         </div>

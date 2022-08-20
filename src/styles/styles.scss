@@ -2,8 +2,13 @@
 
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 
+//$dark: $black-bis;
+//$content-heading-color: white;
+
 $dark: $black-bis;
-$content-heading-color: white;
+$content-heading-color: $white-ter;
+// $text: $grey-dark;
+// $background: $black-bis;
 
 @import "../node_modules/bulma/bulma.sass";
 
