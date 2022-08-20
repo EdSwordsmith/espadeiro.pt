@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+interface Post {
+    frontmatter: {
+        title: string;
+        date: string;
+        description?: string;
+        image?: string;
+    };
+    url: string;
+}
+
+const posts: Post[] = await Astro.glob('../blog/*.md');
+---
+
+<Layout title="Blog" description="My Blog" image="/edu.jpg">
+    <div class="hero is-fullheight is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <p class="title">Blog</p>
+                {posts.map(post => (
+                    <div class="mb-4">
+                        <a href={post.url}>
+                            <p class="title is-4 mb-1">{post.frontmatter.title}</p>
+                        </a>
+                        <p>{post.frontmatter.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</Layout>
