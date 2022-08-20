@@ -4,14 +4,21 @@ import Layout from "./Layout.astro";
 export interface Props {
     frontmatter: {
         title: string;
+        date: string;
         image?: string;
         description?: string;
     };
 }
 
-const { frontmatter: { title, image, description } } = Astro.props as Props;
+const { frontmatter: { title, image, description, date } } = Astro.props as Props;
 const seoImage = image || "";
 const desc = description || "";
+
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
 ---
 
 <Layout image={seoImage} title={title} description={desc}>
@@ -22,9 +29,10 @@ const desc = description || "";
 
         <div class="hero-body">
             <div class="container content is-max-desktop">
-                <p class="title is-2">
-                    {title}
-                </p>
+                <div class="mb-4">
+                    <p class="title is-2 mb-2">{title}</p>
+                    <p>{formattedDate}</p>
+                </div>
 
                 <slot />
             </div>
