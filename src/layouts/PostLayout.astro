@@ -5,13 +5,16 @@ export interface Props {
     frontmatter: {
         title: string;
         image?: string;
+        description?: string;
     };
 }
 
-const { frontmatter: { title, image } } = Astro.props as Props;
+const { frontmatter: { title, image, description } } = Astro.props as Props;
+const seoImage = image || "";
+const desc = description || "";
 ---
 
-<Layout>
+<Layout image={seoImage} title={title} description={desc}>
     <div class="hero is-dark">
         <div class="hero-head">
             {image && <figure class="image"><img src={image} alt={title}></figure>}
