@@ -1,40 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-interface RawPost {
-    frontmatter: {
-        title: string;
-        date: string;
-        description?: string;
-        image?: string;
-    };
-    url: string;
-}
-
-interface Post {
-    frontmatter: {
-        title: string;
-        date: Date;
-        description?: string;
-        image?: string;
-    };
-    url: string;
-}
+import { Post, PostData } from "../../utils/posts";
 
 const getPosts = async (): Promise<Post[]> => {
-    const rawPosts: RawPost[] = await Astro.glob("../blog/*.md");
-    return rawPosts
-        .map((rawPost) => ({
-            ...rawPost,
-            frontmatter: {
-                ...rawPost.frontmatter,
-                date: new Date(rawPost.frontmatter.date),
-            },
-        }))
-        .sort(
-            (a, b) =>
-                b.frontmatter.date.getTime() - a.frontmatter.date.getTime()
-        );
+    const posts: PostData[] = await Astro.glob("../blog/*.md");
+    return posts
+        .map((post) => new Post(post))
+        .sort((a, b) => b.date.getTime() - a.date.getTime());
 };
 
 const posts: Post[] = await getPosts();
@@ -49,20 +21,11 @@ const posts: Post[] = await getPosts();
                     posts.map((post) => (
                         <a href={post.url}>
                             <div class="mb-4">
-                                <p class="title is-4">
-                                    {post.frontmatter.title}
-                                </p>
+                                <p class="title is-4">{post.title}</p>
                                 <p class="subtitle is-6 mb-0">
-                                    {post.frontmatter.date.toLocaleDateString(
-                                        "en-US",
-                                        {
-                                            year: "numeric",
-                                            month: "long",
-                                            day: "numeric",
-                                        }
-                                    )}
+                                    {post.formattedDate}
                                 </p>
-                                <p>{post.frontmatter.description}</p>
+                                <p>{post.description}</p>
                             </div>
                         </a>
                     ))
