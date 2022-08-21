@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: "@layouts/PostLayout.astro"
 title: Implementing an ECS - Part 1
 date: 2021-12-27 14:56:09 +0000
 description: I have been tasked with implementing a simple ECS prototype before we start implementing one for the CUBOS. game engine

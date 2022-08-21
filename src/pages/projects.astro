@@ -1,0 +1,42 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const description =
+    "Hey, I'm Eduardo, a Developer and Student. I love programming and I'm currently studying Computer Science and Engineering at Instituto Superior Técnico in Lisbon.";
+---
+
+<Layout description={description}>
+    <div class="hero is-fullheight is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <p class="title">Projects</p>
+                <div class="columns is-multiline">
+                    <div class="column is-3">
+                        <figure class="image is-3by2">
+                            <img src="/100stepdungeon.png">
+                        </figure>
+                        <p class="subtitle is-4 has-text-centered">100 Step Dungeon</p>
+                    </div>
+                    <div class="column is-3">
+                        <figure class="image is-3by2">
+                            <img src="/bridgeman.png">
+                        </figure>
+                        <p class="subtitle is-4 has-text-centered">Bridgeman</p>
+                    </div>
+                    <div class="column is-3">
+                        <figure class="image is-3by2">
+                            <img src="/guessthenumber.png">
+                        </figure>
+                        <p class="subtitle is-4 has-text-centered">Guess the Number</p>
+                    </div>
+                    <div class="column is-3">
+                        <figure class="image is-3by2">
+                            <img src="/losttreasuredigger.png">
+                        </figure>
+                        <p class="subtitle is-4 has-text-centered">Lost Treasure Digger</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

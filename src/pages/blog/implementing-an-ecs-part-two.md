@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: "@layouts/PostLayout.astro"
 title: Implementing an ECS - Part 2
 date: 2021-12-27 15:30:00 +0000
 description: Continuing on my previous post. I started making my own ECS implementation...
