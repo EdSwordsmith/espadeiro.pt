@@ -1,9 +1,9 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { Post, PostData } from "../../utils/posts";
+import Layout from "@layouts/Layout.astro";
+import { Post, PostData } from "@utils/posts";
 
 const getPosts = async (): Promise<Post[]> => {
-    const posts: PostData[] = await Astro.glob("../blog/*.md");
+    const posts: PostData[] = await Astro.glob("./blog/*.md");
     return posts
         .map((post) => new Post(post))
         .sort((a, b) => b.date.getTime() - a.date.getTime());

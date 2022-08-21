@@ -10,10 +10,10 @@
     //   name: "About",
     //   href: "/",
     // },
-    // {
-    //   name: "Projects",
-    //   href: "/",
-    // },
+    {
+      name: "Projects",
+      href: "/projects/",
+    },
     {
       name: "Blog",
       href: "/blog/",
