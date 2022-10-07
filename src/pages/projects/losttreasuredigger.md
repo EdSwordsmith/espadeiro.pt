@@ -4,6 +4,12 @@ title: Lost Treasure Digger
 date: 2021-01-21 16:59:00 +0000
 image: /losttreasuredigger.png
 description: A game made for the Global Game Jam 2021
+links:
+  - text: "Itch.io Page"
+    url: "https://edswordsmith.itch.io/lost-treasure-digger"
+    icon: "itch-io"
+  - text: "GGJ Page"
+    url: "https://globalgamejam.org/2021/games/lost-treasures-5"
 ---
 
 <!--
