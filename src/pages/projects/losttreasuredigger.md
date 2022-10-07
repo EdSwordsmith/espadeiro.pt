@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostLayout.astro"
+layout: "@layouts/ProjectLayout.astro"
 title: Lost Treasure Digger
 date: 2021-01-21 16:59:00 +0000
 image: /losttreasuredigger.png

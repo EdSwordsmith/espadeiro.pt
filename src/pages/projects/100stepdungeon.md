@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostLayout.astro"
+layout: "@layouts/ProjectLayout.astro"
 title: 100 Step Dungeon
 date: 2019-06-14 18:00:00 +0100
 image: /100stepdungeon.png
