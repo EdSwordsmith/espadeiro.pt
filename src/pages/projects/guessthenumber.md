@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostLayout.astro"
+layout: "@layouts/ProjectLayout.astro"
 title: Guess the Number
 date: 2018-06-15 18:00:00 +0100
 image: /guessthenumber.png
