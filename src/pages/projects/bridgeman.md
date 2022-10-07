@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/PostLayout.astro"
+layout: "@layouts/ProjectLayout.astro"
 title: Bridgeman
 date: 2020-02-01 16:00:00 +0000
 image: /bridgeman.png
