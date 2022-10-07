@@ -1,18 +1,18 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { Post, PostData } from "@utils/posts";
+import { Project, ProjectData } from "@utils/projects";
 
 const description =
   "Hey, I'm Eduardo, a Developer and Student. I love programming and I'm currently studying Computer Science and Engineering at Instituto Superior Técnico in Lisbon.";
 
-const getProjects = async (): Promise<Post[]> => {
-    const posts: PostData[] = await Astro.glob("./projects/*.md");
+const getProjects = async (): Promise<Project[]> => {
+    const posts: ProjectData[] = await Astro.glob("./projects/*.md");
     return posts
-        .map((post) => new Post(post))
+        .map((post) => new Project(post))
         .sort((a, b) => b.date.getTime() - a.date.getTime());
 };
 
-const projects: Post[] = await getProjects();
+const projects: Project[] = await getProjects();
 ---
 
 <Layout description={description}>
