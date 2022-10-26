@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon";
+
+import { Project, ProjectData } from "@utils/projects";
+import Layout from "./Layout.astro";
+
+export interface Props extends ProjectData {}
+
+const project = new Project(Astro.props as Props);
+const description = project.description || "";
+const image = project.image || "";
+const title = project.title;
+const formattedDate = project.formattedDate;
+---
+
+<Layout image={image} title={title} description={description}>
+    <div class="hero is-dark is-fullheight">
+        <div class="hero-body">
+            <div class="is-max-desktop">
+                <div class="columns is-vcentered">
+                    <div class="column is-6">
+                        {
+                            project.image && (
+                                <figure class="image">
+                                    <img src={image} alt={title} />
+                                </figure>
+                            )
+                        }
+                    </div>
+                    <div class="column is-6 content">
+                        <div class="mb-4">
+                            <p class="title is-2 mb-5">{title}</p>
+                            <p class="subtitle mb-2">{formattedDate}</p>
+
+                            {
+                                project.links.map((link) => (
+                                    <a href={link.url} class="is-size-4 mr-4">
+                                        { link.icon && <Icon pack="fa-brands" name={link.icon} size={18} /> }
+                                        {link.text}
+                                    </a>
+                                ))
+                            }
+                        </div>
+
+                        <div>
+                            <slot />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

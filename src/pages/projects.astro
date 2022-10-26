@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Project, ProjectData } from "@utils/projects";
+
+const description =
+  "Hey, I'm Eduardo, a Developer and Student. I love programming and I'm currently studying Computer Science and Engineering at Instituto Superior Técnico in Lisbon.";
+
+const getProjects = async (): Promise<Project[]> => {
+    const posts: ProjectData[] = await Astro.glob("./projects/*.md");
+    return posts
+        .map((post) => new Project(post))
+        .sort((a, b) => b.date.getTime() - a.date.getTime());
+};
+
+const projects: Project[] = await getProjects();
+---
+
+<Layout description={description}>
+  <div class="hero is-fullheight is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <p class="title">Projects</p>
+        <div class="columns is-multiline">
+          {
+            projects.map((project) => (
+                <div class="column is-4">
+                    <a href={project.url}>
+                        <figure class="image is-3by2">
+                        <img src={project.image} />
+                        </figure>
+                        <p class="subtitle is-4 has-text-centered">{project.title}</p>
+                    </a>
+                </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
