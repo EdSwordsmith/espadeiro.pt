@@ -1,45 +1,16 @@
 ---
-import { Icon } from "astro-icon";
 
-import Layout from "@layouts/Layout.astro";
-
-const description = "Hey, I'm Eduardo, a Developer and Student. I love programming and I'm currently studying Computer Science and Engineering at Instituto Superior Técnico in Lisbon.";
 ---
 
-<Layout description={description}>
-    <div class="hero is-fullheight is-dark">
-        <div class="hero-body">
-            <div class="container">
-                <figure class="image is-128x128">
-                    <img class="is-rounded"
-                        src="/edu.jpg">
-                </figure>
-
-                <p class="title is-1">
-                    Hi, I'm Eduardo!
-                </p>
-                <p class="subtitle">
-                    I'm studying Computer Science and Engineering @ Instituto Superior Técnico in Lisbon.
-                </p>
-
-                <div>
-                    <a href="https://github.com/EdSwordsmith" target="_blank" class="mx-2">
-                        <Icon pack="fa-brands" name="github" size={32} />
-                    </a>
-
-                    <a href="https://edswordsmith.itch.io/" target="_blank" class="mx-2">
-                        <Icon pack="fa-brands" name="itch-io" size={32} />
-                    </a>
-
-                    <a href="https://linkedin.com/in/edswordsmith" target="_blank" class="mx-2">
-                        <Icon pack="fa-brands" name="linkedin" size={32} />
-                    </a>
-
-                    <a href="https://twitter.com/EdSwordsmith" target="_blank" class="mx-2">
-                        <Icon pack="fa-brands" name="twitter" size={32} />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html>
