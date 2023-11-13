@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/PostLayout.astro"
 title: Coding a Snake Clone
 date: 2020-12-27 11:50:26 +0000
 image: /snake.png

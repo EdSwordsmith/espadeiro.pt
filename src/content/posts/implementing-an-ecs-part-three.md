@@ -1,5 +1,4 @@
 ---
-layout: "@layouts/PostLayout.astro"
 title: Implementing an ECS - Part 3
 date: 2021-12-27 16:21:27 +0000
 description: Continuing on my previous post. I made my own ECS implementation. It worked, but I still wanted to revisit the articles and look for possible improvements.
