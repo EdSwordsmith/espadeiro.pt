@@ -1,7 +1,24 @@
 ---
+import { getCollection } from "astro:content";
 import PageLayout from "../layouts/PageLayout.astro";
+
+const getPosts = async () => {
+  const posts = await getCollection("posts");
+  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+};
+
+const posts = await getPosts();
 ---
 
 <PageLayout>
-  <p class="text-center">WIP</p>
+  <h1 class="text-4xl font-semibold mb-4">My Blog</h1>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/blog/${post.slug}`} class="hover:underline">
+          <span class="font-semibold">{post.data.date.toLocaleDateString("pt-PT")}</span> - {post.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
 </PageLayout>

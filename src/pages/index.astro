@@ -3,9 +3,15 @@ import PageLayout from "../layouts/PageLayout.astro";
 
 import projects from "../data/projects.json";
 import experience from "../data/experience.json";
+import likes from "../data/likes.json";
 ---
 
 <PageLayout>
+  <img
+    src="https://espadeiro.pt/edu.jpg"
+    class="float-right rounded-full w-32"
+  />
+
   <div class="mb-4">
     <h1 class="text-4xl font-semibold">Eduardo Espadeiro</h1>
     <h2 class="text-2xl font-medium">student & future software engineer</h2>
@@ -29,7 +35,7 @@ import experience from "../data/experience.json";
     </ul>
   </div>
 
-  <div>
+  <div class="mb-4">
     <h3 class="text-2xl font-semibold">Some of my projects</h3>
     <ul>
       {
@@ -41,6 +47,13 @@ import experience from "../data/experience.json";
           </li>
         ))
       }
+    </ul>
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-semibold">Things that I like</h3>
+    <ul>
+      {likes.map((like) => <li>{like}</li>)}
     </ul>
   </div>
 </PageLayout>
