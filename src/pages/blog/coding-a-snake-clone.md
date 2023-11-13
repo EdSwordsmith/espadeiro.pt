@@ -43,12 +43,12 @@ For the C version, I used two structs, `Snake` and `SnakeNode`. `SnakeNode` is u
 
 And I wrote these functions:
 
--   `CreateSnake` - For creating the snake.
--   `PushSnakeNode` - For pushing a new node to the linked list.
--   `PopSnakeNode` - For removing the tail of the linked list.
--   `UpdateSnake` - Contains the logic for the snake's behavior.
--   `DrawSnake` - Draws the snake to the screen.
--   `ResetFoodPosition` - Sets the position of the food to a random position.
+- `CreateSnake` - For creating the snake.
+- `PushSnakeNode` - For pushing a new node to the linked list.
+- `PopSnakeNode` - For removing the tail of the linked list.
+- `UpdateSnake` - Contains the logic for the snake's behavior.
+- `DrawSnake` - Draws the snake to the screen.
+- `ResetFoodPosition` - Sets the position of the food to a random position.
 
 ### Snake in C Style C++
 

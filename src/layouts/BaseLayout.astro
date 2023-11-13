@@ -1,0 +1,46 @@
+---
+import "@fontsource-variable/source-code-pro";
+
+import fetchWebringURLs from "../utils/webring";
+
+const webringURLs = await fetchWebringURLs();
+webringURLs.prev.name = webringURLs.prev.name.split(" ")[0];
+webringURLs.next.name = webringURLs.next.name.split(" ")[0];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Eduardo Espadeiro</title>
+  </head>
+  <body
+    class="dark:bg-slate-900 dark:text-white font-mono items-center flex flex-col"
+  >
+    <div class="w-full max-w-4xl">
+      <header class="justify-center flex w-full align-center text-xl my-4">
+        <a href="/" class="hover:underline mx-4">Home</a>
+        <a href="/" class="hover:underline mx-4">CV</a>
+        <a href="/" class="hover:underline mx-4">Blog</a>
+      </header>
+
+      <main class="w-full p-8 max-w-4xl mx-auto dark:bg-slate-800 rounded">
+        <slot />
+      </main>
+
+      <footer class="w-full align-center text-xl my-4 flex justify-between">
+        <a href={webringURLs.prev.url} class="hover:underline mx-4"
+          >{webringURLs.prev.name}'s website</a
+        >
+        <a
+          href="https://pombosmalvados.github.io/webring/"
+          class="hover:underline mx-4">Our webring</a
+        >
+        <a href={webringURLs.next.url} class="hover:underline mx-4"
+          >{webringURLs.next.name}'s website</a
+        >
+      </footer>
+    </div>
+  </body>
+</html>
