@@ -1,20 +1,46 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+
+import projects from "../data/projects.json";
+import experience from "../data/experience.json";
 ---
 
 <PageLayout>
-  <h1 class="text-4xl font-semibold">Eduardo Espadeiro</h1>
-  <h2 class="text-2xl font-medium mb-4">student & future software engineer</h2>
+  <div class="mb-4">
+    <h1 class="text-4xl font-semibold">Eduardo Espadeiro</h1>
+    <h2 class="text-2xl font-medium">student & future software engineer</h2>
+  </div>
 
   <p class="text-xl mb-4">
     Currently writing my master's thesis on implementing a metaobject protocol
     for Julia.
   </p>
 
-  <h3 class="text-2xl font-semibold">Work Experience</h3>
-  <ul>
-    <li>(May 2023 - Present) Research Intern @ INESC-ID</li>
-    <li>(Sep 2022 - Present) Teaching Assistant @ IST</li>
-    <li>(May 2021 - Present) Full Stack Developer @ IST</li>
-  </ul>
+  <div class="mb-4">
+    <h3 class="text-2xl font-semibold">Work Experience</h3>
+    <ul>
+      {
+        experience.map((job) => (
+          <li>
+            {job.from} - {job.to}, {job.position} @ {job.company}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-semibold">Some of my projects</h3>
+    <ul>
+      {
+        projects.map((project) => (
+          <li>
+            <a href={project.href} class="hover:underline">
+              {project.desc}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </PageLayout>

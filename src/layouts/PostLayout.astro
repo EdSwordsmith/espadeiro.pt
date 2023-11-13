@@ -5,8 +5,10 @@ const title = Astro.props.frontmatter.title;
 ---
 
 <BaseLayout>
-    <article class="w-full p-8 max-w-4xl mx-auto bg-slate-200 dark:bg-slate-800 rounded prose dark:prose-invert">
-      <h1>{title}</h1>
-      <slot />
-    </article>
+  <article
+    class="w-full p-8 max-w-4xl mx-auto bg-slate-200 dark:bg-slate-800 rounded prose dark:prose-invert"
+  >
+    <h1>{title}</h1>
+    <slot />
+  </article>
 </BaseLayout>
