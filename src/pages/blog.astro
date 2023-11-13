@@ -15,8 +15,9 @@ const posts = await getPosts();
   <ul>
     {posts.map(post => (
       <li>
-        <a href={`/blog/${post.slug}`} class="hover:underline">
-          <span class="font-semibold">{post.data.date.toLocaleDateString("pt-PT")}</span> - {post.data.title}
+        <a href={`/blog/${post.slug}`} class="hover:underline flex w-full justify-between text-lg">
+          <span>{post.data.title}</span>
+          <span class="font-semibold">{post.data.date.toLocaleDateString("pt-PT")}</span>
         </a>
       </li>
     ))}
