@@ -1,16 +1,20 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>My Astro Site</h1>
-  </body>
-</html>
+<BaseLayout>
+  <h1 class="text-4xl font-semibold">Eduardo Espadeiro</h1>
+  <h2 class="text-2xl font-medium mb-4">student & future software engineer</h2>
+
+  <p class="text-xl mb-4">
+    Currently writing my master's thesis on implementing a metaobject protocol
+    for Julia.
+  </p>
+
+  <h3 class="text-2xl font-semibold">Work Experience</h3>
+  <ul>
+    <li>(May 2023 - Present) Research Intern @ INESC-ID</li>
+    <li>(Sep 2022 - Present) Teaching Assistant @ IST</li>
+    <li>(May 2021 - Present) Full Stack Developer @ IST</li>
+  </ul>
+</BaseLayout>

@@ -8,9 +8,10 @@ description: Continuing on my previous post. I made my own ECS implementation. I
 Continuing on my previous [post](/blog/implementing-an-ecs-part-two). I made my own ECS implementation. It worked, but I still wanted to revisit the articles and look for possible improvements.
 
 ## Component Storages
+
 A certain component type might be used so often that having a vector makes sense. Or it might be barely used that using a small hash map might be more memory efficient.
 
-So this improvement was inspired by the Specs library and consisted of replacing each component pool with storage. 
+So this improvement was inspired by the Specs library and consisted of replacing each component pool with storage.
 
 Each storage needs to be able to insert a component for a certain entity and to retrieve it. And now we have a vector of storages.
 
@@ -29,21 +30,25 @@ std::vector<IStorage *> _storages;
 Still taking inspiration from Specs, I made three types of storage `VecStorage`, `MapStorage`and `NullStorage`. When registering a component type, you need to pass a storage for that componnet type.
 
 ### VecStorage
+
 VecStorage uses an `std::vector` and is meant to have an element for each entity even if that entity doesn't have this component.
 
 ### MapStorage
-MapStorage uses an hash map (`std::unordered_map`), it's meant to be used with less used component types, so that there's less empty space between elements. 
+
+MapStorage uses an hash map (`std::unordered_map`), it's meant to be used with less used component types, so that there's less empty space between elements.
 
 It's not efficient to use this with types that are used very often.
 
 ### NullStorage
+
 NullStorage will most likely sound weird to most people. It does exactly what the name says, it doesn't store anything.
 
-It's use is for components that don't have any data are used as tags, where all that matters is having a bit in the bitmask. 
+It's use is for components that don't have any data are used as tags, where all that matters is having a bit in the bitmask.
 
 This way there's something pretending to store components that doesn't waste memory with components that have no data.
 
 ### Example
+
 ```cpp
 struct Player {};
 
@@ -90,6 +95,7 @@ int main() {
 ```
 
 ## Resources
+
 Another thing I made based on what I saw in Specs is what they call resources. Resources are data stored in the ecs that isn't tied to any entity or component. Useful for sharing data between systems.
 
 ```cpp
@@ -104,11 +110,13 @@ counter->count = 0;
 ```
 
 ## Final thoughts
+
 Some improvements could still be made, but I think I have reached my goal.
+
 - `VecStorage` could have a start capacity
 - Other storage types can be made, for example:
-    - DenseVecStorage
-    - TreeMapStorage
+  - DenseVecStorage
+  - TreeMapStorage
 
 In some stuff, memory safety isn't ensured, a storage could be freed after being passed and cause the program to attempt to use an invalid pointer.
 
