@@ -13,36 +13,36 @@ webringURLs.next.name = webringURLs.next.name.split(" ")[0];
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <title>Eduardo Espadeiro</title>
   </head>
   <body
-    class="bg-slate-100 dark:bg-slate-900 dark:text-white font-mono items-center flex flex-col"
+    class="flex flex-col items-center bg-slate-100 font-mono dark:bg-slate-900 dark:text-white"
   >
     <div class="w-full max-w-4xl">
-      <header class="justify-center flex w-full align-center text-xl my-4">
-        <a href="/" class="hover:underline mx-4">Home</a>
+      <header class="align-center my-4 flex w-full justify-center text-xl">
+        <a href="/" class="mx-4 hover:underline">Home</a>
         <a
           href="https://cv.espadeiro.pt/"
-          class="hover:underline mx-4"
+          class="mx-4 hover:underline"
           target="_blank">CV</a
         >
-        <a href="/blog/" class="hover:underline mx-4">Blog</a>
+        <a href="/blog/" class="mx-4 hover:underline">Blog</a>
       </header>
 
       <slot />
 
-      <footer class="w-full align-center text-xl my-4 flex justify-between">
-        <a href={webringURLs.prev.url} class="hover:underline mx-4"
+      <footer class="align-center my-4 flex w-full justify-between text-xl">
+        <a href={webringURLs.prev.url} class="mx-4 hover:underline"
           >{webringURLs.prev.name}'s website</a
         >
         <a
           href="https://pombosmalvados.github.io/webring/"
-          class="hover:underline mx-4">our webring</a
+          class="mx-4 hover:underline">our webring</a
         >
-        <a href={webringURLs.next.url} class="hover:underline mx-4"
+        <a href={webringURLs.next.url} class="mx-4 hover:underline"
           >{webringURLs.next.name}'s website</a
         >
       </footer>

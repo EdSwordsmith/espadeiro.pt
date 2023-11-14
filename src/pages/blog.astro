@@ -11,15 +11,22 @@ const posts = await getPosts();
 ---
 
 <PageLayout>
-  <h1 class="text-4xl font-semibold mb-4">My Blog</h1>
+  <h1 class="mb-4 text-4xl font-semibold">My Blog</h1>
   <ul>
-    {posts.map(post => (
-      <li>
-        <a href={`/blog/${post.slug}`} class="hover:underline flex w-full justify-between text-lg">
-          <span>{post.data.title}</span>
-          <span class="font-semibold">{post.data.date.toLocaleDateString("pt-PT")}</span>
-        </a>
-      </li>
-    ))}
+    {
+      posts.map((post) => (
+        <li>
+          <a
+            href={`/blog/${post.slug}`}
+            class="flex w-full justify-between text-lg hover:underline"
+          >
+            <span>{post.data.title}</span>
+            <span class="font-semibold">
+              {post.data.date.toLocaleDateString("pt-PT")}
+            </span>
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </PageLayout>

@@ -1,7 +1,7 @@
 ---
 title: Coding a Snake Clone
 date: 2020-12-27 11:50:26 +0000
-image: /snake.png
+image: ./snake.png
 description: Recently I decided to look at coding games in C with raylib, made a few experiments and then I decided to code a snake clone from scratch.
 ---
 

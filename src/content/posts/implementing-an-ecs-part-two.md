@@ -4,7 +4,7 @@ date: 2021-12-27 15:30:00 +0000
 description: Continuing on my previous post. I started making my own ECS implementation...
 ---
 
-Continuing on my previous [post]({% post_url 2021-12-27-implementing-an-ecs-part-one %}). I started making my own ECS implementation following this [article](https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html).
+Continuing on my previous [post](/blog/implementing-an-ecs-part-one). I started making my own ECS implementation following this [article](https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html).
 
 ## Component pool
 
