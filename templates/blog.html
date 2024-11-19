@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="mb-4 text-4xl font-semibold">My Blog</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="/blog/{{ post.slug }}"
+                   class="flex w-full justify-between text-lg hover:underline">
+                    <span>{{ post.frontmatter.title }}</span>
+                    <span class="font-semibold">{{ post.frontmatter.date["$__toml_private_datetime"] | date(format="%d/%m/%Y") }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

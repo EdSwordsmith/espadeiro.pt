@@ -1,7 +1,7 @@
 ---
-title: Implementing an ECS - Part 1
-date: 2021-12-27 14:56:09 +0000
-description: I have been tasked with implementing a simple ECS prototype before we start implementing one for the CUBOS. game engine
+title = "Implementing an ECS - Part 1"
+date = 2021-12-27T14:56:09Z
+description = "I have been tasked with implementing a simple ECS prototype before we start implementing one for the CUBOS. game engine"
 ---
 
 I have been tasked with implementing a simple ECS (Entity Component Systems) prototype before we start implementing one for the [CUBOS.](https://github.com/GameDevTecnico/cubos) game engine.
