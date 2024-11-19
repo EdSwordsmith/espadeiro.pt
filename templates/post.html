@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <article class="prose w-full max-w-4xl dark:prose-invert">
+        <h1>{{ post.frontmatter.title }}</h1>
+        {% if post.frontmatter.image %}
+            <img src="{{ post.frontmatter.image }}"
+                 alt="{{ post.frontmatter.title }}"
+                 class="w-full" />
+        {% endif %}
+        {{ post.content }}
+    </article>
+{% endblock content %}
