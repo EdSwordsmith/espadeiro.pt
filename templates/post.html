@@ -7,6 +7,6 @@
                  alt="{{ post.frontmatter.title }}"
                  class="w-full" />
         {% endif %}
-        {{ post.content }}
+        {{ post.content | safe }}
     </article>
 {% endblock content %}
