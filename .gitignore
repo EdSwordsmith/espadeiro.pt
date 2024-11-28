@@ -14,3 +14,4 @@ dist/
 
 # rust build output
 /target
+.vercel
