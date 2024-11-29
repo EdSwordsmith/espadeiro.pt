@@ -1,8 +1,8 @@
 ---
-title: Coding a Snake Clone
-date: 2020-12-27 11:50:26 +0000
-image: ./snake.png
-description: Recently I decided to look at coding games in C with raylib, made a few experiments and then I decided to code a snake clone from scratch.
+title = "Coding a Snake Clone"
+date = 2020-12-27T11:50:26Z
+image = "/snake.png"
+description = "Recently I decided to look at coding games in C with raylib, made a few experiments and then I decided to code a snake clone from scratch."
 ---
 
 Recently I decided to look at coding games in C with raylib, made a few experiments and then I decided to code a snake clone from scratch. I knew that a snake could work as queue of positions. Moving a snake would be simply pushing a new position to the list and removing its tail. In order to make the snake grow all I had to do was not removing its tail if the snake encountered food.

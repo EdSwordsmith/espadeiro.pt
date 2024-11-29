@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+              rel="stylesheet">
+        <link href="/output.css" rel="stylesheet" />
+        <link href="/prism.css" rel="stylesheet" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <title>Eduardo Espadeiro</title>
+    </head>
+    <body class="flex flex-col items-center bg-slate-100 font-mono dark:bg-slate-900 dark:text-white">
+        <div class="w-full max-w-4xl">
+            <header class="align-center my-4 flex w-full justify-center text-xl">
+                <a href="/" class="mx-4 hover:underline">Home</a>
+                <a href="https://cv.espadeiro.pt/"
+                   class="mx-4 hover:underline"
+                   target="_blank">CV</a>
+                <a href="/blog/" class="mx-4 hover:underline">Blog</a>
+            </header>
+            <main class="mx-auto w-full max-w-4xl rounded bg-slate-200 p-8 dark:bg-slate-800">
+                {% block content %}
+                {% endblock content %}
+            </main>
+            {% if webring %}
+                <footer class="align-center my-4 flex w-full justify-between text-xl">
+                    <a href="{{ webring[0].url }}" class="mx-4 hover:underline">{{ webring[0].name | split(pat=" ") | first }}'s
+                    website</a>
+                    <a href="https://pombosmalvados.github.io/webring/"
+                       class="mx-4 hover:underline">our webring</a>
+                    <a href="{{ webring[1].url }}" class="mx-4 hover:underline">{{ webring[1].name | split(pat=" ") | first }}'s website</a>
+                </footer>
+            {% endif %}
+        </div>
+        <script src="/prism.js"></script>
+    </body>
+</html>

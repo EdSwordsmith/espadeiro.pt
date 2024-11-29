@@ -1,7 +1,7 @@
 ---
-title: Implementing an ECS - Part 2
-date: 2021-12-27 15:30:00 +0000
-description: Continuing on my previous post. I started making my own ECS implementation...
+title = "Implementing an ECS - Part 2"
+date = 2021-12-27T15:30:00Z
+description = "Continuing on my previous post. I started making my own ECS implementation..."
 ---
 
 Continuing on my previous [post](/blog/implementing-an-ecs-part-one). I started making my own ECS implementation following this [article](https://www.david-colson.com/2020/02/09/making-a-simple-ecs.html).
