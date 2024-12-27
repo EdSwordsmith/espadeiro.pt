@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block description %}
+    <meta property="description" content="{{ post.frontmatter.description }}" />
+{% endblock description %}
 {% block content %}
     <article class="prose w-full max-w-4xl dark:prose-invert">
         <h1>{{ post.frontmatter.title }}</h1>

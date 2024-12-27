@@ -13,17 +13,23 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <title>Eduardo Espadeiro</title>
+        {% block description %}
+            <meta property="description"
+                  content="Eduardo Espadeiro&#39;s website/blog, where I share what I've learned from my programming adventures." />
+        {% endblock description %}
     </head>
     <body class="flex flex-col items-center bg-slate-100 font-mono dark:bg-slate-900 dark:text-white">
         <div class="w-full max-w-4xl">
-            <header class="align-center my-4 flex w-full justify-center text-xl">
+            <header class="align-center my-4 flex w-full justify-center text-xl"
+                    role="navigation">
                 <a href="/" class="mx-4 hover:underline">Home</a>
                 <a href="https://cv.espadeiro.pt/"
                    class="mx-4 hover:underline"
                    target="_blank">CV</a>
                 <a href="/blog/" class="mx-4 hover:underline">Blog</a>
             </header>
-            <main class="mx-auto w-full max-w-4xl rounded bg-slate-200 p-8 dark:bg-slate-800">
+            <main class="mx-auto w-full max-w-4xl rounded bg-slate-200 p-8 dark:bg-slate-800"
+                  role="main">
                 {% block content %}
                 {% endblock content %}
             </main>
@@ -33,7 +39,8 @@
                     website</a>
                     <a href="https://pombosmalvados.github.io/webring/"
                        class="mx-4 hover:underline">our webring</a>
-                    <a href="{{ webring[1].url }}" class="mx-4 hover:underline">{{ webring[1].name | split(pat=" ") | first }}'s website</a>
+                    <a href="{{ webring[1].url }}" class="mx-4 hover:underline">{{ webring[1].name | split(pat=" ") | first }}'s
+                    website</a>
                 </footer>
             {% endif %}
         </div>
