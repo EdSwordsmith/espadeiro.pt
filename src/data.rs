@@ -31,6 +31,14 @@ pub const PROJECTS: &[Project] = &[
         desc: "a turing machine simulator",
         href: "https://github.com/Espadeiro-Salvador/emulador-maquinas-turing",
     },
+    Project {
+        desc: "a metaobject protocol for julia",
+        href: "https://github.com/EdSwordsmith/Liberalitas.jl",
+    },
+    Project {
+        desc: "a custom static site generator",
+        href: "https://github.com/EdSwordsmith/espadeiro.pt"
+    },
 ];
 
 #[derive(Serialize)]
