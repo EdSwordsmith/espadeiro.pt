@@ -51,6 +51,12 @@ pub struct Job {
 
 pub const JOBS: &[Job] = &[
     Job {
+        from: "November 2025",
+        to: "Present",
+        position: "Systems Engineer",
+        company: "Cloudflare",
+    },
+    Job {
         from: "January 2025",
         to: "July 2025",
         position: "SRE",
