@@ -5,16 +5,16 @@ use toml::value::Datetime;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct FrontMatter {
-    title: String,
-    date: Datetime,
-    image: Option<String>,
-    description: String,
+    pub title: String,
+    pub date: Datetime,
+    pub image: Option<String>,
+    pub description: String,
 }
 
 #[derive(Debug, Serialize)]
 pub struct Post {
     pub frontmatter: FrontMatter,
-    content: String,
+    pub content: String,
     pub slug: String,
 }
 
