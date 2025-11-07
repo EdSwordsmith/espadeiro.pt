@@ -50,6 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     context.insert("likes", data::LIKES);
     context.insert("projects", data::PROJECTS);
     context.insert("jobs", data::JOBS);
+    context.insert("base_url", data::BASE_URL);
 
     let posts = blog::fetch_posts()?;
     context.insert("posts", &posts);

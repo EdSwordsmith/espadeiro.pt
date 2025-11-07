@@ -13,6 +13,22 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <title>Eduardo Espadeiro</title>
+        <meta property="og:site_name" content="Eduardo Espadeiro" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ base_url }}" />
+        <meta property="og:title" content="Eduardo Espadeiro" />
+        <meta property="og:description" content="Eduardo Espadeiro&#39;s website/blog, where I share what I&#39;ve learned from my programming adventures." />
+        <meta property="og:image" content="{{ base_url }}android-chrome-512x512.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@EdSwordsmith" />
+        <meta name="twitter:creator" content="@EdSwordsmith" />
+        <meta name="twitter:title" content="Eduardo Espadeiro" />
+        <meta name="twitter:description" content="Eduardo Espadeiro&#39;s website/blog, where I share what I&#39;ve learned from my programming adventures." />
+        <meta name="twitter:image" content="{{ base_url }}android-chrome-512x512.png" />
+
+        {% block og_tags %}{% endblock og_tags %}
+        {% block twitter_tags %}{% endblock twitter_tags %}
         {% block description %}
             <meta property="description"
                   content="Eduardo Espadeiro&#39;s website/blog, where I share what I've learned from my programming adventures." />
