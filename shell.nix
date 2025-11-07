@@ -10,5 +10,6 @@ pkgs.mkShell {
     tailwindcss
     openssl
     pkg-config
+    wrangler
   ];
 }
