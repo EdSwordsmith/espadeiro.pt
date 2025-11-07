@@ -5,16 +5,16 @@ use toml::value::Datetime;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct FrontMatter {
-    title: String,
-    date: Datetime,
-    image: Option<String>,
-    description: String,
+    pub title: String,
+    pub date: Datetime,
+    pub image: Option<String>,
+    pub description: String,
 }
 
 #[derive(Debug, Serialize)]
 pub struct Post {
     pub frontmatter: FrontMatter,
-    content: String,
+    pub content: String,
     pub slug: String,
 }
 
@@ -51,13 +51,13 @@ fn parse_post(filename: impl AsRef<Path>) -> Result<Post, Box<dyn Error>> {
     let root = comrak::parse_document(&arena, &markdown, &options);
 
     let frontmatter = parse_frontmatter(root)?;
-    let mut html = Vec::new();
+    let mut html = String::new();
     comrak::format_html(root, &comrak::Options::default(), &mut html)?;
 
     Ok(Post {
         frontmatter,
         slug: get_post_slug(filename).ok_or("Cannot compute post's slug.")?,
-        content: String::from_utf8(html)?,
+        content: html,
     })
 }
 

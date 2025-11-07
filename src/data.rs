@@ -1,11 +1,14 @@
 use serde::Serialize;
 
+pub const BASE_URL: &str = "https://espadeiro.pt";
+
 pub const LIKES: &[&str] = &[
     "Programming languages and Compilers",
     "Linux (and NixOS)",
     "Rust",
     "Functional Programming",
     "Heavy Metal",
+    "Brewing mead",
 ];
 
 #[derive(Serialize)]

@@ -8,6 +8,7 @@ use tera::{Context, Tera};
 
 mod blog;
 mod data;
+mod feeds;
 mod webring;
 
 fn copy_static_files(src: impl AsRef<Path>, dst: impl AsRef<Path>) -> io::Result<()> {
@@ -49,6 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     context.insert("likes", data::LIKES);
     context.insert("projects", data::PROJECTS);
     context.insert("jobs", data::JOBS);
+    context.insert("base_url", data::BASE_URL);
 
     let posts = blog::fetch_posts()?;
     context.insert("posts", &posts);
@@ -57,6 +59,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     copy_static_files("static", out_dir)?;
     rebuild_tailwindcss(out_dir)?;
+
+    feeds::generate_rss(&posts, out_dir)?;
+    feeds::generate_sitemap(&posts, out_dir)?;
 
     let file = fs::File::create(out_dir.join("index.html"))?;
     tera.render_to("home.html", &context, file)?;

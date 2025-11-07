@@ -2,6 +2,28 @@
 {% block description %}
     <meta property="description" content="{{ post.frontmatter.description }}" />
 {% endblock description %}
+
+{% block og_tags %}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ base_url }}blog/{{ post.slug }}/" />
+    <meta property="og:title" content="{{ post.frontmatter.title }}" />
+    <meta property="og:description" content="{{ post.frontmatter.description }}" />
+    {% if post.frontmatter.image %}
+        <meta property="og:image" content="{{ base_url }}{{ post.frontmatter.image }}" />
+    {% else %}
+        <meta property="og:image" content="{{ base_url }}android-chrome-512x512.png" />
+    {% endif %}
+{% endblock og_tags %}
+
+{% block twitter_tags %}
+    <meta name="twitter:title" content="{{ post.frontmatter.title }}" />
+    <meta name="twitter:description" content="{{ post.frontmatter.description }}" />
+    {% if post.frontmatter.image %}
+        <meta name="twitter:image" content="{{ base_url }}{{ post.frontmatter.image }}" />
+    {% else %}
+        <meta name="twitter:image" content="{{ base_url }}android-chrome-512x512.png" />
+    {% endif %}
+{% endblock twitter_tags %}
 {% block content %}
     <article class="prose w-full max-w-4xl dark:prose-invert">
         <h1>{{ post.frontmatter.title }}</h1>
