@@ -9,6 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy Preview
+    environment:
+      name: Preview
+      url: ${{ steps.deploy.outputs.deployment-url }}
     permissions:
       contents: read
       deployments: write
@@ -30,6 +33,7 @@ jobs:
         run: ./target/release/espadeiro_pt
 
       - name: Deploy to Cloudflare Workers (Preview)
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
