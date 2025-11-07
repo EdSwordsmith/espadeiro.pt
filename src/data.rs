@@ -40,7 +40,7 @@ pub const PROJECTS: &[Project] = &[
     },
     Project {
         desc: "a custom static site generator",
-        href: "https://github.com/EdSwordsmith/espadeiro.pt"
+        href: "https://github.com/EdSwordsmith/espadeiro.pt",
     },
 ];
 

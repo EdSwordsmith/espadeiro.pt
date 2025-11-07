@@ -6,9 +6,10 @@ pub struct Website {
     url: String,
 }
 
-fn fetch_webring_members() -> reqwest::Result<Vec<Website>> {
-    let response = reqwest::blocking::get("https://pombosmalvados.github.io/webring/webring.json")?;
-    response.json()
+fn fetch_webring_members() -> Result<Vec<Website>, ureq::Error> {
+    let mut response = ureq::get("https://pombosmalvados.github.io/webring/webring.json").call()?;
+    let body = response.body_mut().read_json()?;
+    Ok(body)
 }
 
 pub fn fetch_neighbors() -> Option<(Website, Website)> {
