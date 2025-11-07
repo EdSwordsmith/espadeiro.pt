@@ -1,5 +1,5 @@
 name = "espadeiro-pt"
 compatibility_date = "2025-11-07"
 
-[env.preview]
-name = "espadeiro-pt-preview"
+[assets]
+directory = "./dist"
