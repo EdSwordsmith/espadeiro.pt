@@ -65,7 +65,7 @@ pub fn fetch_posts() -> io::Result<Vec<Post>> {
     let mut posts: Vec<Post> = fs::read_dir("posts")?
         .filter_map(Result::ok)
         .map(|entry| entry.path())
-        .filter(|path| path.extension().map(|ext| ext.to_str()).flatten() == Some("md"))
+        .filter(|path| path.extension().and_then(|ext| ext.to_str()) == Some("md"))
         .filter_map(|path| parse_post(path).ok())
         .collect();
 
