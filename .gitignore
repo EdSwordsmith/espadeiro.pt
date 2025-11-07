@@ -15,5 +15,6 @@ dist/
 # rust build output
 /target
 
-# vercel
-.vercel
+# Cloudflare
+.wrangler
+node_modules
