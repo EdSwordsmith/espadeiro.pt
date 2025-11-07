@@ -6,6 +6,7 @@ pub const LIKES: &[&str] = &[
     "Rust",
     "Functional Programming",
     "Heavy Metal",
+    "Brewing mead",
 ];
 
 #[derive(Serialize)]
