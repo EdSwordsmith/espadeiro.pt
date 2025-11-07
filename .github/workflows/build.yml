@@ -25,6 +25,7 @@ jobs:
         chmod +x tailwindcss-linux-x64
         mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss
     - run: npm install --global vercel@latest
+    - uses: Swatinem/rust-cache@v2
     - run: cargo build --release
     - run: ./target/release/espadeiro_pt
     - name: Pull Vercel Environment Information
