@@ -6,7 +6,7 @@ pkgs.mkShell {
     rustc
     rustfmt
     clippy
-    tailwindcss
+    tailwindcss_4
     openssl
     pkg-config
     wrangler
