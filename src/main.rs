@@ -27,6 +27,8 @@ fn copy_static_files(src: impl AsRef<Path>, dst: impl AsRef<Path>) -> io::Result
 fn rebuild_tailwindcss(out_dir: impl AsRef<Path>) -> Result<(), Box<dyn Error>> {
     let mut child = Command::new("tailwindcss")
         .args([
+            "-i",
+            "tailwind.css",
             "-o",
             out_dir
                 .as_ref()
