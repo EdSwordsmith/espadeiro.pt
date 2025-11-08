@@ -29,13 +29,10 @@ jobs:
       - name: Build
         run: cargo build --release
 
-      - name: Generate site
-        run: ./target/release/espadeiro_pt
-
-      - name: Deploy to Cloudflare Workers (Preview)
+      - name: Generate and deploy to Cloudflare Workers (Preview)
         id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --assets dist --env preview
+          command: versions upload

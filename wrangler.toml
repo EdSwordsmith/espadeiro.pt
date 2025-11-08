@@ -1,5 +1,8 @@
 name = "espadeiro-pt"
-compatibility_date = "2025-11-07"
+compatibility_date = "2025-05-23"
 
-[env.preview]
-name = "espadeiro-pt-preview"
+[assets]
+directory = "./dist"
+
+[build]
+command = "cargo run --release"

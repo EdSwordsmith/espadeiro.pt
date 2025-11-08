@@ -1,34 +1,39 @@
 use std::{
+    error::Error,
     fs::File,
     io::{self, Write},
     path::Path,
 };
 
-use chrono::DateTime;
-use rss::{
-    ChannelBuilder,
-    ItemBuilder,
-};
+use rss::{ChannelBuilder, ItemBuilder};
+use time::{OffsetDateTime, format_description};
 
-use crate::{
-    blog::Post,
-    data,
-};
+use crate::{blog::Post, data};
 
-pub fn generate_rss(posts: &[Post], out_dir: impl AsRef<Path>) -> io::Result<()> {
+pub fn generate_rss(posts: &[Post], out_dir: impl AsRef<Path>) -> Result<(), Box<dyn Error>> {
     let items: Vec<_> = posts
         .iter()
-        .map(|post| {
+        .filter_map(|post| {
             let url = format!("{}/blog/{}", data::BASE_URL, post.slug);
-            let pub_date = DateTime::parse_from_rfc3339(&post.frontmatter.date.to_string()).unwrap();
+            let pub_date = OffsetDateTime::parse(
+                &post.frontmatter.date.to_string(),
+                &format_description::well_known::Rfc3339,
+            )
+            .ok()?;
 
-            ItemBuilder::default()
-                .title(Some(post.frontmatter.title.clone()))
-                .link(Some(url))
-                .description(Some(post.frontmatter.description.clone()))
-                .content(Some(post.content.clone()))
-                .pub_date(Some(pub_date.to_rfc2822()))
-                .build()
+            let formatted_pub_date = pub_date
+                .format(&format_description::well_known::Rfc2822)
+                .ok()?;
+
+            Some(
+                ItemBuilder::default()
+                    .title(Some(post.frontmatter.title.clone()))
+                    .link(Some(url))
+                    .description(Some(post.frontmatter.description.clone()))
+                    .content(Some(post.content.clone()))
+                    .pub_date(Some(formatted_pub_date))
+                    .build(),
+            )
         })
         .collect();
 
@@ -40,11 +45,13 @@ pub fn generate_rss(posts: &[Post], out_dir: impl AsRef<Path>) -> io::Result<()>
         .build();
 
     let file = File::create(out_dir.as_ref().join("rss.xml"))?;
-    channel.write_to(file).map_err(|e| io::Error::new(io::ErrorKind::Other, e))?;
+    channel
+        .write_to(file)
+        .map_err(|e| io::Error::new(io::ErrorKind::Other, e))?;
     Ok(())
 }
 
-pub fn generate_sitemap(posts: &[Post], out_dir: impl AsRef<Path>) -> io::Result<()> {
+pub fn generate_sitemap(posts: &[Post], out_dir: impl AsRef<Path>) -> Result<(), Box<dyn Error>> {
     let mut file = File::create(out_dir.as_ref().join("sitemap.xml"))?;
     writeln!(file, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>")?;
     writeln!(
@@ -54,24 +61,27 @@ pub fn generate_sitemap(posts: &[Post], out_dir: impl AsRef<Path>) -> io::Result
 
     let home_url = data::BASE_URL;
     writeln!(file, "  <url>")?;
-    writeln!(file, "    <loc>{}</loc>", home_url)?;
+    writeln!(file, "    <loc>{}\n</loc>", home_url)?;
     writeln!(file, "  </url>")?;
 
     let blog_url = format!("{}/blog", data::BASE_URL);
     writeln!(file, "  <url>")?;
-    writeln!(file, "    <loc>{}</loc>", blog_url)?;
+    writeln!(file, "    <loc>{}\n</loc>", blog_url)?;
     writeln!(file, "  </url>")?;
 
     for post in posts {
         let post_url = format!("{}/blog/{}", data::BASE_URL, post.slug);
-        let pub_date = DateTime::parse_from_rfc3339(&post.frontmatter.date.to_string()).unwrap();
+        let pub_date = OffsetDateTime::parse(
+            &post.frontmatter.date.to_string(),
+            &format_description::well_known::Rfc3339,
+        )?;
 
         writeln!(file, "  <url>")?;
-        writeln!(file, "    <loc>{}</loc>", post_url)?;
+        writeln!(file, "    <loc>{}\n</loc>", post_url)?;
         writeln!(
             file,
-            "    <lastmod>{}</lastmod>",
-            pub_date.format("%Y-%m-%d")
+            "    <lastmod>{}\n</lastmod>",
+            pub_date.format(&time::macros::format_description!("[year]-[month]-[day]"))?
         )?;
         writeln!(file, "  </url>")?;
     }
